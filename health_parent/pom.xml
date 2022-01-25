@@ -14,7 +14,7 @@
         <module>health_service_provider</module>
         <module>health_backend</module>
     </modules>
-    <!--    父工程的打包方式pom方式-->
+    <!-- 父工程的打包方式pom方式-->
     <packaging>pom</packaging>
 <!--    集中定义依赖版本号-->
     <properties>
