@@ -11,22 +11,31 @@
 </head>
 <body>
 <div id="app">
-    <!--
-                current-change：内置的事件，当前页码改变时会触发，可以获取到改变之后的页码
-            -->
-    <el-pagination
-            @current-change="handleCurrentChange"
-            current-page="5"
-            page-size="10"
-            layout="total, prev, pager, next, jumper"
-            :total="305">
-    </el-pagination>
+    <el-button :plain="true" @click="open1">消息</el-button>
+    <el-button :plain="true" @click="open2">成功</el-button>
+    <el-button :plain="true" @click="open3">警告</el-button>
+    <el-button :plain="true" @click="open4">错误</el-button>
     <script>
         new Vue({
             el:'#app',
             methods:{
-                handleCurrentChange(page){
-                    alert(page);
+                open1() {
+                    this.$message('这是一条消息提示');
+                },
+                open2() {
+                    this.$message({
+                        message: '恭喜你，这是一条成功消息',
+                        type: 'success'
+                    });
+                },
+                open3() {
+                    this.$message({
+                        message: '警告哦，这是一条警告消息',
+                        type: 'warning'
+                    });
+                },
+                open4() {
+                    this.$message.error('错了哦，这是一条错误消息');
                 }
             }
         });
