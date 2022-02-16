@@ -233,19 +233,20 @@
                 //添加
                 handleAdd () {
 					//校验
-					this.$refs['dataAddForm'].validate((valid) => {
+					this.$refs['dataAddForm'].validate((valid) => {   //this.$refs['']取得表单验证数据，进行验证，成功则valid为true，否则为false
 						if(valid){
 							//发送ajax请求
 							var _this = this;
-							axios.post("url",this.formData).then((resp) => {
+							axios.post("/checkitem/add.do",this.formData).then((resp) => {   //post请求和回调函数
 								// resp.data = {};
-								if(resp.data.flag){ // 服务器端处理成功
+								if(resp.data.flag){ // 服务器端处理成功  resp.data 固定写法，拿到响应数据。
 									_this.$message({
 										message: resp.data.message,
 										type: 'success'
 									});
-									
+									//关闭弹出的新增窗口
 									_this.dialogFormVisible = false;
+									//新增数据后的数据查询
 									_this.findPage();
 									
 								}else{ // 服务器端处理失败
@@ -260,16 +261,21 @@
 				
                 },
                 //分页查询
+
+
                 findPage() {
                 },
                 // 重置表单
                 resetForm() {
+                    //重置数据
+                    this.formData = {};
                 },
                 // 弹出添加窗口
                 handleCreate() {
-					this.formData = {};
+
+					//弹出新增窗口
 					this.dialogFormVisible = true;
-					
+					this.resetForm();
                 },
                 // 弹出编辑窗口
                 handleUpdate(row) {
