@@ -22,7 +22,7 @@
         <property name="username" value="root" />
         <property name="password" value="root" />
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/health" />
+        <property name="url" value="jdbc:mysql://localhost:3306/health?characterEncoding=UTF-8" />
     </bean>
     <!--spring和mybatis整合的工厂bean-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -32,6 +32,6 @@
     <!--批量扫描接口生成代理对象-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--指定接口所在的包-->
-        <property name="basePackage" value="com.xzl.dao" />
+        <property name="basePackage" value="com.health.dao" />
     </bean>
 </beans>

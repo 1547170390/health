@@ -8,3 +8,4 @@ public interface CheckItemDao {
     public void add(CheckItem checkItem);
 
 }
+
