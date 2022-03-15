@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /*
-检查项管理
+检查项管理,测试一下
  */
 @RestController
 @RequestMapping("/checkitem")
