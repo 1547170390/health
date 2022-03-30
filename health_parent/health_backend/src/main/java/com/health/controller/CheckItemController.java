@@ -18,7 +18,7 @@ public class CheckItemController {
 
     @Reference
     private CheckItemService checkItemService;
-    //新增检查项
+    //新增检查项1
     @RequestMapping("/add")
     public Result add(@RequestBody CheckItem checkItem){
         try {
